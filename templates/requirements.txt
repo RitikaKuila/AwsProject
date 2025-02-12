@@ -1,0 +1,39 @@
+---------virtual env-------
+sudo apt-get update
+sudo apt install python3-pip -y
+sudo apt install python3-venv
+python3 -m venv myenv
+source myenv/bin/activate
+
+----------Django------
+pip3 install django
+pip3 install djangorestframework
+pip3 install mysql-connector-python
+
+----------mysql client------
+sudo apt install mysql-client
+sudo apt install mysql-server -y
+
+
+-------Docker-----
+sudo apt-get install apt-transport-https ca-certificates curl software-properties-common
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+sudo apt update
+sudo apt install docker-ce
+sudo systemctl enable docker
+sudo docker --version
+
+------To run phpMyAdmin-------
+sudo docker pull phpmyadmin/phpmyadmin
+sudo docker run --name phpmyadmin -d -e PMA_HOST=<mysql_host> -p 8080:80 phpmyadmin/phpmyadmin
+http://<your-server-ip>:8080
+
+
+
+sudo docker run --name phpmyadmin -d -e PMA_HOST=database-1.c7qow8cusm8y.us-east-2.rds.amazonaws.com -p 8080:80 phpmyadmin/phpmyadmin
+
+
+
+
+

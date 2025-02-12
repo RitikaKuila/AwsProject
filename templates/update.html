@@ -1,0 +1,49 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Calculator</title>
+	<style type="text/css">
+		body{
+			background-color: deeppink;
+		}
+		.cal{
+			width: 350px;
+			box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+			background-color: deepskyblue;
+			border-radius: 8px;
+			padding-bottom: 10px;
+		}
+	</style>
+
+</head>
+<body>
+	<h1>{{user_data}}</h1>
+	<center>	
+	<div class="cal">
+		<form method="POST">
+			{% csrf_token %}
+			<h1>USER DATA</h1>
+			
+		<label>Enter ur name</label>
+		<input type="text" name="nm" placeholder="Enter name" required value="{{data.name}}"><br><br>
+
+		<label>Enter ur email</label>
+		<input type="email" name="em"placeholder="Enter email"required value="{{data.mail}}"><br><br>
+
+		<label>Enter ur phone</label>
+		<input type="number" name="ph"placeholder="Enter number"required value="{{data.phone}}"><br><br>
+
+		<input type="submit" name="btn" value="Update">
+		</form>
+		
+
+	</div>
+	<h2>Status= {{stat}}</h2>
+	</center>
+
+</body>
+</html>
